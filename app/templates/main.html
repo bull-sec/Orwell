@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block title %}Orwell{% endblock %}
+
+{% block cols %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+<form action="/doStuff" method='POST'>
+	<h2>Extension Name:</h2><br>
+  	<input type="text" name="extension" placeholder="Enter ID here">
+	<br>
+  	<input type="submit" value="Submit">
+</form>
+<br>
+<hr>
+<br>  
+    <script>
+	$(document).ready(function(){
+            $("button").click(function(){
+                $.ajax({url: "/doStuff", success: function(result){
+	            $("#div1").html(result);
+	        }});
+	    });
+	});
+    </script>
+<a href='/download'>Download Extension Package</a>
+<hr>
+<p id="fileName"></p>
+<h2>Extension Permissions</h2>
+<code id="filePerms"></code>
+<script>
+	$(document).ready(function(){
+	    $.getJSON("/getPerms", function(result){
+		result=JSON.parse(result);
+		$.each(result.permissions, function(i, field){
+    		    $("#filePerms").append('<p>'+field);
+		});
+	});
+});
+	</script>
+<script>
+        $(document).ready(function(){
+        	$.getJSON("/getName", function(result){
+        	    result=JSON.parse(result);
+        	    $.each(result.name, function(i, field){
+        		$("#fileName").append('<p>'+field);
+        	    });
+    });
+});
+</script>
+{% endblock %}

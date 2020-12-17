@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% block head %}
+	<title>Orwell</title>
+	<!--<script src="/static/js/jquery-3.3.1.min.js"></script>-->
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="/static/css/bootstrap.min.css">
+	<link rel="shortcut icon" type="image/png" href="static/img/favicon.ico"/>
+	{% endblock %}
+</head>
+<body>
+{% block jumbotron %}
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="display-3">Orwell</h1>
+        <p>Welcome to Orwell! The Chrome Extension Analysis Thing!</p>
+	<p>The Extension ID is the nonsense bit at the end of the string when you open up an Extension on the Chrome Web Store.</p>
+
+	<code>https://chrome.google.com/webstore/detail/clickclean/ghgabhipcejejjmhhchfonmamedcbeod</code>
+
+      </div>
+    </div>
+{% endblock %}
+
+{% block cols %}
+<div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Block 1</h2>
+          <p>Block 1</p>
+        </div>
+        <div class="col-md-4">
+          <h2>Block 2</h2>
+          <p>Block 2</p>
+       </div>
+        <div class="col-md-4">
+          <h2>Block 3</h2>
+          <p>Block 3</p>
+        </div>
+      </div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+</div>
+{% endblock %}
+
+<div id="footer" class="container">
+    {% block footer %}
+        <br>
+        &copy; Copyright 2020, @bullsecSecurity
+    {% endblock %}
+</div>
+
+
+</body>
+</html>
+
