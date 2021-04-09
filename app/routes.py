@@ -10,6 +10,7 @@ from flask import send_file
 import requests
 import sys
 import os
+import json
 import zipfile
 
 from app import app
@@ -80,10 +81,21 @@ def getName():
     ext = session['ext1']
     path = session['path']
     dir_path = os.path.dirname(path)
+    print(dir_path)
     manifest = "manifest.json"
     m_path = os.path.join(dir_path, manifest)
-    with open(m_path) as f:
-        return jsonify(f.read())
+    with open(m_path) as json_file:
+        data = json.load(json_file)
+        if "name" in data:
+            d = data['name'].replace("__MSG_","")
+            d = d.replace("__","")
+            return d
+        elif "short_name" in data:
+            d = data['short_name'].replace("__MSG_","")
+            d = d.replace("__","")
+            return d
+        else:
+            return {"name":"not found"}
 
 
 @app.route("/download/", methods=['GET'])
