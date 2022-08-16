@@ -14,4 +14,4 @@ Then head to `http://127.0.0.1:8081` to use the application
 
 ## TODO
 
-[ ] - Fix the /download/ function because it's borked (files are being created, something in the `send_file()` function in Flask going skewif
+- [ ] Fix the /download/ function because it's borked (files are being created, something in the `send_file()` function in Flask going skewif
