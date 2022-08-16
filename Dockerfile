@@ -10,11 +10,11 @@ FROM debian:latest
 MAINTAINER Carlos Tighe
 
 RUN apt-get update && apt-get install -y apache2 \
-    libapache2-mod-wsgi \
+    libapache2-mod-wsgi-py3 \
     build-essential \
-    python \
-    python-dev\
-    python-pip \
+    python3 \
+    python3-dev\
+    python3-pip \
     vim \
  && apt-get clean \
  && apt-get autoremove \
