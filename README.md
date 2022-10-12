@@ -9,6 +9,12 @@ Google changed a thing, and I lost the initial Dockerfile for this project...
 IT IS NOW PYTHON3 COMPATIBLE!
 
 ```bash
+# Build it
+docker build -t bulldops/orwell:latest .
+```
+
+```bash
+# Run it
 docker run -it --rm -d -p 8081:80 bullsec/orwell:latest
 ```
 
