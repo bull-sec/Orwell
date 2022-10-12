@@ -104,5 +104,5 @@ def download():
     print(path)
     filename = os.path.basename(path)
     print("I MADE IT THIS FAR THEN DIED")
-    return send_file(path, as_attachment=True, attachment_filename=filename)
+    return send_file(path, as_attachment=True, download_name=filename)
 
